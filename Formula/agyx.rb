@@ -4,8 +4,8 @@
 class Agyx < Formula
   desc "Run several Google Antigravity (agy) CLI profiles side by side"
   homepage "https://github.com/iamdin/agyx"
-  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "b06d1ce5cd81a562d293ee8c34598ff01836b042aa9dd2d73846e2957a5098e7"
+  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "2ea925c3a4ab6be5b5991555ef17f57edc87faa2ed20801e53d6e4eabe3e680b"
   license "MIT"
 
   def install
