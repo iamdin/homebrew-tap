@@ -5,8 +5,8 @@
 class AgyxBeta < Formula
   desc "Run several Google Antigravity (agy) CLI profiles side by side"
   homepage "https://github.com/iamdin/agyx"
-  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.2.0-beta.3.tar.gz"
-  sha256 "6d2fbd247e0b7f955022e8ccd33f4a22dbdea6e175a3f07e6cdce798c756593f"
+  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.2.0-beta.4.tar.gz"
+  sha256 "db84a701de60ebf3b61d4b904b6627da26ee740af40a4d2196eccc0c28c8d23a"
   license "MIT"
 
   conflicts_with "agyx", because: "both install agyx"
