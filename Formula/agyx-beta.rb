@@ -5,8 +5,8 @@
 class AgyxBeta < Formula
   desc "Run several Google Antigravity (agy) CLI profiles side by side"
   homepage "https://github.com/iamdin/agyx"
-  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.2.0-beta.1.tar.gz"
-  sha256 "00004ff36162b543cee9e91e13e39a36b30aaebd0dd54e1558597d477f2c9c80"
+  url "https://github.com/iamdin/agyx/archive/refs/tags/v0.2.0-beta.2.tar.gz"
+  sha256 "d9cfb66febfe3f1b8342b5322c1174022a27d2b50cf7a7deafe2f79f0b81b44b"
   license "MIT"
 
   conflicts_with "agyx", because: "both install agyx"
@@ -27,16 +27,16 @@ class AgyxBeta < Formula
     refute_path_exists bin/"agy"
 
     # no setup step: the real agy comes from AGYX_REAL_AGY (no real agy is run), the
-    # <data>/bin/agy entry is created by the first run; no home whitelist is needed
+    # <data>/agy entry is created by the first run; no home whitelist is needed
     ENV["AGYX_DATA_DIR"] = testpath/"data"
-    ENV["AGYX_REAL_HOME"] = testpath
+    ENV["HOME"] = testpath
     ENV["AGYX_REAL_AGY"] = "/usr/bin/true"
     ENV["AGYX_ASSUME_YES"] = "1" # skip the first-run question
     (testpath/"data/profiles/work/antigravity-cli").mkpath
     # anything that is not an agyx subcommand launches agy via the shim
     system bin/"agyx", "--profile", "work"
     # the entry link goes through opt_prefix, so it survives upgrades
-    assert_equal opt_libexec/"bin/agy", Pathname(File.readlink(testpath/"data/bin/agy"))
+    assert_equal opt_libexec/"bin/agy", Pathname(File.readlink(testpath/"data/agy"))
     refute_path_exists testpath/".config/agyx/symlinks"
   end
 end
